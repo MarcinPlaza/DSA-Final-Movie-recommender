@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - CineMatch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <p>Algorithm used: {{ algorithm }}</p>
+        <p>Time taken: {{ elapsed_time|round(2) }} seconds</p>
+        {% if results %}
+            <ul>
+                {% for movie in results %}
+                    <li>{{ movie.rank }}. {{ movie.title }} (Rating: {{ movie.rating }})</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found for your search criteria.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="button">New Search</a>
+    </div>
+</body>
+</html>

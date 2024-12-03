@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to CineMatch</h1>
+        <p>Find your favorite movies based on genre, director, or lead actor!</p>
+        <form action="/search" method="post">
+            <div class="form-group">
+                <label for="genre">Enter a genre:</label>
+                <input type="text" id="genre" name="genre" placeholder="e.g., Action">
+            </div>
+            <div class="form-group">
+                <label for="director">Enter a director (optional):</label>
+                <input type="text" id="director" name="director" placeholder="e.g., Christopher Nolan">
+            </div>
+            <div class="form-group">
+                <label for="lead_actor">Enter a lead actor (optional):</label>
+                <input type="text" id="lead_actor" name="lead_actor" placeholder="e.g., Leonardo DiCaprio">
+            </div>
+            <div class="form-group">
+                <label for="algorithm">Choose search algorithm:</label>
+                <select id="algorithm" name="algorithm">
+                    <option value="Tree Structure">Tree Structure</option>
+                    <option value="Dictionary of Lists">Dictionary of Lists</option>
+                </select>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
